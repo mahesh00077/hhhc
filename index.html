@@ -441,12 +441,37 @@
             box-shadow: var(--shadow-lg);
         }
         
-        .form-control, .form-select {
+        .form-control {
             padding: 0.8rem 1rem;
             border-radius: 8px;
-            border: 1px solid var(--light-gray);
+            /*border: 1px solid var(--light-gray);*/
+            border: 1px solid #ced4da;
             transition: var(--transition);
             font-size: 0.95rem;
+        }
+        .form-select {
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            /*border: 1px solid var(--light-gray);*/
+            border: 1px solid #ced4da;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .form-select {
+            display: block;
+            width: 100%;
+            height: calc(1.5em + .75rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
         }
         
         .form-control:focus, .form-select:focus {
@@ -625,6 +650,13 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
+        .logo-container{
+            font-size: 18px;
+        }
+        .logo-container img {
+            height: 75px;
+        }
+
         /* Mobile responsive adjustments */
         @media (max-width: 768px) {
             .row.mt-5 .col-md-4 {
@@ -645,6 +677,13 @@
             .row.mt-5 .col-md-4 small {
                 font-size: 0.8rem;
             }
+
+            .logo-container{
+                font-size: 13px;
+            }
+            .logo-container img {
+                height: 70px;
+            }
         }
 
         /* For very small screens */
@@ -663,7 +702,68 @@
             .row.mt-5 .ml-3 {
                 margin-left: 12px !important;
             }
+
+            .logo-container{
+                font-size: 12px;
+            }
+            .logo-container img {
+                height: 65px;
+            }
         }
+        .services-section {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 20px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .services-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #222;
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px 30px;
+        }
+
+        .services-list li {
+            background: #ffffff;
+            padding: 16px 20px;
+            border-radius: 14px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+            font-size: 15px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .services-list li i {
+            font-size: 20px;
+            color: #2c7be5;
+            min-width: 26px;
+        }
+
+        .services-list li:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
     </style>
 </head>
 <body>
@@ -675,9 +775,9 @@
                     <!-- Logo added here - using Font Awesome icon as placeholder, replace with your logo image -->
                     <div class="">
                         <!-- <i class="fas fa-hands-helping" style="font-size: 2rem; color: #2563EB;"></i> -->
-                        <img src="images/logo3.png" alt="Healing Hands Logo" class="" style="width:100%;height: 80px;">
+                        <img src="images/logo3.png" alt="Healing Hands Logo" class="" style="width:100%;">
                     </div>
-                    Healing Hands
+                    Healing Hands Home Care Service
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
@@ -698,7 +798,7 @@
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item ml-2">
-                        <a class="btn btn-primary" href="tel:+1234567890">
+                        <a class="btn btn-primary" href="tel:+918328275630">
                             <i class="fas fa-phone-alt mr-2"></i>Call Now
                         </a>
                     </li>
@@ -776,7 +876,38 @@
         </div>
     </section>
 
-    <!-- Services Section - REDESIGNED -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Our Premium Services</h2>
+                <p class="text-muted">Comprehensive healthcare services delivered at your doorstep</p>
+            </div>
+            <ul class="services-list">    
+                <li data-aos="fade-up" data-aos-delay="50" ><i class="fas fa-user-nurse"></i><h6>Nursing Care at Home</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50" ><i class="fas fa-stethoscope"></i><h6>Doctor Home Visit</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50" ><i class="fas fa-heartbeat"></i><h6>Vital Signs Monitoring</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50" ><i class="fas fa-syringe"></i><h6>Injection & IV Therapy</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-band-aid"></i><h6>Wound & Surgical Care</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-procedures"></i><h6>Catheter Care</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-lungs"></i><h6>Respiratory Therapy</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-bed"></i><h6>Bedridden Patient Care</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-running"></i><h6>Physiotherapy at Home</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-utensils"></i><h6>Custom Diet Plans</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-pills"></i><h6>Medication Management</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-vial"></i><h6>Lab Test Collection</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-procedures"></i><h6>ICU setup at home</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-heartbeat"></i><h6>Biomedical devices provided at home</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-first-aid"></i><h6>Emergency First Aid</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-user-md"></i><h6>Occupational health management</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-syringe"></i><h6>Occupational-related vaccinations</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-user-nurse"></i><h6>Home-care trained attenders</h6></li>
+                <li data-aos="fade-up" data-aos-delay="50"><i class="fas fa-hospital-user"></i><h6>Hospital-trained attenders</h6></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- Services Section - REDESIGNED --
     <section class="services" id="services">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -785,7 +916,7 @@
             </div>
             
             <div class="services-grid">
-                <!-- Service 1 -->
+                
                 <div class="service-item" data-aos="fade-up" data-aos-delay="0">
                     <div class="service-item-icon">
                         <i class="fas fa-user-nurse"></i>
@@ -796,7 +927,7 @@
                     </div>
                 </div>
                 
-                <!-- Service 2 -->
+                
                 <div class="service-item" data-aos="fade-up" data-aos-delay="50">
                     <div class="service-item-icon">
                         <i class="fas fa-stethoscope"></i>
@@ -807,7 +938,7 @@
                     </div>
                 </div>
                 
-                <!-- Service 3 -->
+                
                 <div class="service-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-item-icon">
                         <i class="fas fa-heartbeat"></i>
@@ -818,7 +949,7 @@
                     </div>
                 </div>
                 
-                <!-- Service 4 -->
+                
                 <div class="service-item" data-aos="fade-up" data-aos-delay="150">
                     <div class="service-item-icon">
                         <i class="fas fa-syringe"></i>
@@ -829,7 +960,7 @@
                     </div>
                 </div>
                 
-                <!-- Service 5 -->
+                
                 <div class="service-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-item-icon">
                         <i class="fas fa-band-aid"></i>
@@ -840,7 +971,7 @@
                     </div>
                 </div>
                 
-                <!-- Service 6 -->
+                
                 <div class="service-item" data-aos="fade-up" data-aos-delay="250">
                     <div class="service-item-icon">
                         <i class="fas fa-procedures"></i>
@@ -851,7 +982,7 @@
                     </div>
                 </div>
                 
-                <!-- Service 7 -->
+                
                 <div class="service-item" data-aos="fade-up" data-aos-delay="0">
                     <div class="service-item-icon">
                         <i class="fas fa-lungs"></i>
@@ -862,7 +993,7 @@
                     </div>
                 </div>
                 
-                <!-- Service 8 -->
+                
                 <div class="service-item" data-aos="fade-up" data-aos-delay="50">
                     <div class="service-item-icon">
                         <i class="fas fa-bed"></i>
@@ -873,7 +1004,7 @@
                     </div>
                 </div>
                 
-                <!-- Service 9 -->
+                
                 <div class="service-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-item-icon">
                         <i class="fas fa-running"></i>
@@ -884,7 +1015,7 @@
                     </div>
                 </div>
                 
-                <!-- Service 10 -->
+                
                 <div class="service-item" data-aos="fade-up" data-aos-delay="150">
                     <div class="service-item-icon">
                         <i class="fas fa-utensils"></i>
@@ -895,7 +1026,7 @@
                     </div>
                 </div>
                 
-                <!-- Service 11 -->
+                
                 <div class="service-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-item-icon">
                         <i class="fas fa-pills"></i>
@@ -906,7 +1037,6 @@
                     </div>
                 </div>
                 
-                <!-- Service 12 -->
                 <div class="service-item" data-aos="fade-up" data-aos-delay="250">
                     <div class="service-item-icon">
                         <i class="fas fa-vial"></i>
@@ -916,24 +1046,81 @@
                         <p>Home sample collection for lab tests with proper handling and timely delivery.</p>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Additional Service (for symmetry) -->
-            <div class="row">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                    <div class="service-item">
-                        <div class="service-item-icon">
-                            <i class="fas fa-first-aid"></i>
-                        </div>
-                        <div class="service-item-content">
-                            <h4>Emergency First Aid</h4>
-                            <p>Immediate basic emergency care and stabilization until hospital transfer if needed.</p>
-                        </div>
+
+                <div class="service-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="service-item-icon">
+                        <i class="fas fa-procedures"></i>
+                    </div>
+                    <div class="service-item-content">
+                        <h4>ICU setup at home</h4>
+                        <p>Complete critical care setup at home with advanced ICU equipment and continuous monitoring.</p>
                     </div>
                 </div>
+
+                <div class="service-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="service-item-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="service-item-content">
+                        <h4>Biomedical devices provided at home</h4>
+                        <p>Delivery and installation of essential medical devices to support patient care at home.</p>
+                    </div>
+                </div>
+
+                <div class="service-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="service-item-icon">
+                        <i class="fas fa-first-aid"></i>
+                    </div>
+                    <div class="service-item-content">
+                        <h4>Emergency First Aid</h4>
+                        <p>Immediate basic emergency care and stabilization until hospital transfer if needed.</p>
+                    </div>
+                </div>
+
+                <div class="service-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="service-item-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="service-item-content">
+                        <h4>Occupational health management</h4>
+                        <p>Comprehensive health programs to ensure workplace safety, wellness, and compliance.</p>
+                    </div>
+                </div>
+
+                <div class="service-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="service-item-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <div class="service-item-content">
+                        <h4>Occupational-related vaccinations</h4>
+                        <p>On-site vaccination services to protect employees from occupational health risks.</p>
+                    </div>
+                </div>
+
+                <div class="service-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="service-item-icon">
+                        <i class="fas fa-user-nurse"></i>
+                    </div>
+                    <div class="service-item-content">
+                        <h4>Home-care trained attenders</h4>
+                        <p>Professionally trained attendants to assist patients with daily care at home.</p>
+                    </div>
+                </div>
+
+                <div class="service-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="service-item-icon">
+                        <i class="fas fa-hospital-user"></i>
+                    </div>
+                    <div class="service-item-content">
+                        <h4>Hospital-trained attenders</h4>
+                        <p>Experienced hospital-trained staff providing high-quality patient support and care.</p>
+                    </div>
+                </div>
+
             </div>
+            
         </div>
-    </section>
+    </section> -->
 
     <!-- Booking Form -->
     <section class="hero" id="booking-div" style="padding: 30px;">
@@ -991,16 +1178,16 @@
                     <div class="appointment-card aos-init aos-animate" data-aos="fade-left" data-aos-delay="400">
                         <h3 class="mb-3 text-center">Book Your Appointment</h3>
                         <p class="text-center text-muted mb-4">Schedule a visit from our healthcare professionals</p>
-                        <form id="bookingForm">
+                        <form id="bookingForm" method="post" action="#">
                             <div class="form-group">
-                                <label for="fullName">Full Name</label>
+                                <label for="fullName">Full Name <span style="color: red;">*</span></label>
                                 <input type="text" class="form-control" id="fullName" placeholder="Enter your name" required="">
                             </div>
                             
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="phoneNumber">Phone Number</label>
+                                        <label for="phoneNumber">Phone Number <span style="color: red;">*</span></label>
                                         <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter phone number" required="">
                                     </div>
                                 </div>
@@ -1013,8 +1200,8 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="serviceType">Service Required</label>
-                                <select class="form-control" id="serviceType" required="">
+                                <label for="serviceType">Service Required <span style="color: red;">*</span></label>
+                                <select class="form-select" id="serviceType" required="">
                                     <option value="">Select Service</option>
                                     <option value="nursing">Nursing Care at Home</option>
                                     <option value="doctor">Doctor Home Visit</option>
@@ -1026,14 +1213,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="appointmentDate">Preferred Date</label>
+                                        <label for="appointmentDate">Preferred Date <span style="color: red;">*</span></label>
                                         <input type="date" class="form-control" id="appointmentDate" required="" min="2025-12-24">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="appointmentTime">Preferred Time</label>
-                                        <select class="form-control" id="appointmentTime" required="">
+                                        <label for="appointmentTime">Preferred Time <span style="color: red;">*</span></label>
+                                        <select class="form-select" id="appointmentTime" required="">
                                             <option value="">Select Time</option>
                                             <option value="morning">Morning (9 AM - 12 PM)</option>
                                             <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
@@ -1121,7 +1308,7 @@
                 </div>
                 <div class="col-lg-4 text-lg-right">
                     <div class="mt-4 mt-lg-0">
-                        <a href="tel:+1234567890" class="btn btn-light btn-lg mr-3">
+                        <a href="tel:+918328275630" class="btn btn-light btn-lg mr-3">
                             <i class="fas fa-phone-alt mr-2"></i>Call Now
                         </a>
                         <!-- <a href="#contact-form" class="btn btn-outline-light btn-lg">
@@ -1252,7 +1439,7 @@
                         </li> -->
                         <li class="mb-3">
                             <i class="fas fa-phone mr-2"></i>
-                            +91 9879879876 
+                            +91 8328275630 
                         </li>
                         <!-- <li class="mb-3">
                             <i class="fas fa-phone mr-2"></i>
@@ -1273,7 +1460,7 @@
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/1234567890?text=Hi%20Healing%20Hands%2C%20I%20need%20information%20about%20home%20nursing%20care" 
+    <a href="https://wa.me/918328275630?text=Hi%20Healing%20Hands%2C%20I%20need%20information%20about%20home%20nursing%20care" 
        target="_blank" 
        class="whatsapp-button" 
        title="Chat with us on WhatsApp">
