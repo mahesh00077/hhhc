@@ -765,6 +765,59 @@
 
 
     </style>
+    <style type="text/css">
+        /* Mobile Footer Styling */
+        .mobile-footer {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          /*background: #063b3f;*/
+          background: #1e293b;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding: 8px 0;
+          z-index: 9999;
+        }
+
+        /* Footer items */
+        .mobile-footer .footer-item {
+          color: #ffffff;
+          text-decoration: none;
+          text-align: center;
+          font-size: 12px;
+          flex: 1;
+        }
+
+        /* Active item (Home) */
+        .mobile-footer .footer-item.active {
+          background: #ffffff;
+          color: #063b3f;
+          border-radius: 8px;
+          padding: 6px 0;
+        }
+
+        /* Icons */
+        .mobile-footer .icon {
+          display: block;
+          font-size: 20px;
+          margin-bottom: 2px;
+        }
+
+        /* Hide footer on desktop */
+        @media (min-width: 768px) {
+          .mobile-footer {
+            display: none;
+          }
+        }
+
+        @media (max-width: 767px) {
+          .ft-hide {
+            display: none !important;
+          }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -1396,7 +1449,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer ft-hide">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-5 mb-lg-0">
@@ -1462,10 +1515,36 @@
     <!-- WhatsApp Button -->
     <a href="https://wa.me/918328275630?text=Hi%20Healing%20Hands%2C%20I%20need%20information%20about%20home%20nursing%20care" 
        target="_blank" 
-       class="whatsapp-button" 
+       class="whatsapp-button ft-hide" 
        title="Chat with us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Mobile Footer -->
+    <div class="mobile-footer" style="margin-top: 50px;">
+      <a href="#" class="footer-item active">
+        <span class="fa fa-home"></span>
+        <span class="text">Home</span>
+      </a>
+
+      <a href="tel:+918328275630" class="footer-item">
+        <span class="fa fa-phone"></span>
+        <span class="text">Call Now</span>
+      </a>
+
+      <a href="https://wa.me/918328275630" class="footer-item">
+        <span class="fab fa-whatsapp"></span>
+        <span class="text">WhatsApp</span>
+      </a>
+
+      <a href="#" class="footer-item">
+        <div type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="fas fa-bars"></span>
+            <span class="text">Menu</span>
+            <!-- <span class="navbar-toggler-icon"></span> -->
+        </div>
+      </a>
+    </div>
 
     <!-- Bootstrap & jQuery -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
